@@ -11,7 +11,7 @@ with open(os.path.join(here, 'README.md')) as f:
     long_description = f.read()
 
 
-if os.name == 'nt':
+if os.name == 'nt' and os.compiler['CC']!='mingw32':
     extra_compile_args = ["-Ox"]
 else:
     extra_compile_args = ['-std=c++0x', '-pthread', '-O3']
